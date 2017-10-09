@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import ImageElement from './ImageVIews';
+import Gallery from './GalleryView';
 
 
 
@@ -27,20 +28,22 @@ export default class App extends Component {
 
       Images: [
 
-        require('./any.jpg'),
-        require('./pic2.jpeg'),
-        require('./pic3.png'),
-        require('./pic4.jpeg'),
-        require('./pic5.jpeg'),
-        require('./pic6.jpeg'),
-        require('./pic7.jpeg'),
-        require('./pic8.jpeg'),
-        require('./pic9.jpeg'),
-        require('./pic10.jpeg'),
-        require('./pic11.jpeg'),
-        require('./pic12.jpeg'),
-        require('./pic13.jpeg'),
-        require('./pic14.jpeg'),
+        require('./Imagess/any.jpg'),
+        require('./Imagess/pic2.jpeg'),
+        require('./Imagess/pic3.png'),
+        require('./Imagess/pic4.jpeg'),
+        require('./Imagess/pic5.jpeg'),
+        require('./Imagess/pic6.jpeg'),
+        require('./Imagess/pic7.jpeg'),
+        require('./Imagess/pic8.jpeg'),
+        require('./Imagess/pic9.jpeg'),
+        require('./Imagess/pic10.jpeg'),
+        require('./Imagess/pic11.jpeg'),
+        require('./Imagess/pic12.jpeg'),
+        require('./Imagess/pic13.jpeg'),
+        require('./Imagess/pic14.jpeg'),
+
+        require('./Imagess/pic15.png')
 
 
 
@@ -68,6 +71,7 @@ source={ uri:
 'https://static.pexels.com/photos/577585/pexels-photo-577585.jpeg'},
 
                   source={ uri: 
+
 'https://static.pexels.com/photos/257897/pexels-photo-257897.jpeg'},
   source={ uri: 
 'https://static.pexels.com/photos/572056/pexels-photo-572056.jpeg'},
@@ -83,7 +87,6 @@ source={ uri:
 'https://static.pexels.com/photos/374016/pexels-photo-374016.jpeg'}*/
 
 
-        require('./pic15.png')
 
 
 
@@ -95,21 +98,14 @@ source={ uri:
   }
   render() {
 
-    //here we are indexing the array Images and passing the values to the ImageElement class
-
-    let images = this.state.Images.map((val, key) => {
-      return <TouchableWithoutFeedback key={key} >
-        <View style={styles.imagewrap}>
-          <ImageElement imgsource={val}></ImageElement>
-        </View>
-      </TouchableWithoutFeedback>
-
-    });
+    
+  
     return (
       <ScrollView >
         <View style={styles.container}>
 
-          {images}
+          
+          <Gallery images={this.state.Images}/>
 
 
         </View>
